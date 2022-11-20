@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="596.0" prefWidth="920.0" style="-fx-background-color: pink;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.car.CarsListController">
+    <AnchorPane layoutY="80.0" prefHeight="515.0" prefWidth="920.0" style="-fx-background-color: white;">
+        <children>
+            <TableView fx:id="carsTable" layoutX="14.0" layoutY="83.0" prefHeight="345.0" prefWidth="615.0">
+                <columns>
+                    <TableColumn fx:id="markColumn" prefWidth="110.0" text="Марка" />
+                    <TableColumn fx:id="modelColumn" prefWidth="114.0" text="Модель" />
+                    <TableColumn fx:id="yearColumn" prefWidth="121.0" text="Год выпуска" />
+                    <TableColumn fx:id="colorColumn" prefWidth="139.0" text="Цвет" />
+                    <TableColumn fx:id="priceColumn" prefWidth="125.0" text="Цена" />
+                </columns>
+            </TableView>
+            <Button fx:id="addCar" layoutX="18.0" layoutY="27.0" mnemonicParsing="false" style="-fx-background-color: pink;" text="Добавить новый автомобиль">
+                <font>
+                    <Font name="Georgia" size="14.0" />
+                </font>
+            </Button>
+            <Button fx:id="deleteCar" layoutX="256.0" layoutY="27.0" mnemonicParsing="false" prefWidth="106.0" style="-fx-background-color: pink;" text="Удалить">
+                <font>
+                    <Font name="Georgia" size="14.0" />
+                </font>
+            </Button>
+
+
+            <Text fx:id="mark" layoutX="662.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="200.0">
+                <font>
+                    <Font name="Georgia" size="20.0" />
+                </font>
+            </Text>
+            <Text fx:id="model" layoutX="662.0" layoutY="68.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="200.0">
+                <font>
+                    <Font name="Georgia" size="20.0" />
+                </font>
+            </Text>
+            <Button fx:id="orderCar" layoutX="662.0" layoutY="300.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="155.0" style="-fx-background-color: pink;" text="Оформить заявку">
+                <font>
+                    <Font name="Georgia" size="14.0" />
+                </font>
+            </Button>
+         <Button fx:id="saveToFile" layoutX="662.0" layoutY="402.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="155.0" style="-fx-background-color: pink;" text="Сохранить в файл">
+            <font>
+               <Font name="Georgia" size="14.0" />
+            </font>
+         </Button>
+        </children>
+    </AnchorPane>
+
+    <Button fx:id="back" layoutX="563.0" layoutY="36.0" mnemonicParsing="false" text="Назад">
+        <font>
+            <Font name="Georgia" size="17.0" />
+        </font>
+    </Button>
+    <Button fx:id="main" layoutX="225.0" layoutY="14.0" mnemonicParsing="false" style="-fx-background-color: pink;" text="Автомобили">
+        <font>
+            <Font name="Georgia" size="30.0" />
+        </font>
+    </Button>
+</AnchorPane>
