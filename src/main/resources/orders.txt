@@ -1,0 +1,6 @@
+ Марка: bmw Модель:   m5 Год Выпуска  2020 Цвет   white Цена  10000 Имя   gleb Фамилия  andreev Статус заказа  approved
+ Марка: honda Модель:   civic Год Выпуска  2017 Цвет   white Цена  17000 Имя   gleb Фамилия  andreev Статус заказа  rejected
+ Марка: bmw Модель:   m5 Год Выпуска  2020 Цвет   white Цена  10000 Имя   alena Фамилия  novikova Статус заказа  orderFromDealer
+ Марка: mazda Модель:   six Год Выпуска  2016 Цвет   green Цена  50000 Имя   gleb Фамилия  andreev Статус заказа  approved
+ Марка: мерседес Модель:   gle Год Выпуска  2019 Цвет   чёрный Цена  25000 Имя   gleb Фамилия  andreev Статус заказа  approved
+ Марка: mazda Модель:   six Год Выпуска  2016 Цвет   green Цена  50000 Имя   gleb Фамилия  andreev Статус заказа  approved
