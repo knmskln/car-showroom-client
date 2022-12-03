@@ -7,44 +7,49 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="700.0" style="-fx-background-color: pink;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MainController">
     <AnchorPane layoutY="100.0" prefHeight="300.0" prefWidth="700.0" style="-fx-background-color: white;">
-        <Button fx:id="cars" layoutX="108.0" layoutY="118.0" mnemonicParsing="false" style="-fx-background-color: pink;" text="База автомобилей">
+        <Button fx:id="cars" layoutX="250.0" layoutY="62.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="200.0" style="-fx-background-color: pink;" text="База автомобилей">
             <font>
                 <Font name="Georgia" size="17.0" />
             </font>
         </Button>
-        <Button fx:id="myProfile" layoutX="107.0" layoutY="63.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="165.0" style="-fx-background-color: pink;" text="Мой профиль">
+        <Button fx:id="myProfile" layoutX="250.0" layoutY="14.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="200.0" style="-fx-background-color: pink;" text="Мой профиль">
             <font>
                 <Font name="Georgia" size="17.0" />
             </font>
         </Button>
-        <Button fx:id="allUsers" layoutX="391.0" layoutY="63.0" mnemonicParsing="false" style="-fx-background-color: pink;" text="Все пользователи">
+        <Button fx:id="allUsers" layoutX="250.0" layoutY="229.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="200.0" style="-fx-background-color: pink;" text="Все пользователи">
             <font>
                 <Font name="Georgia" size="17.0" />
             </font>
         </Button>
 
-        <Button fx:id="orders" layoutX="389.0" layoutY="118.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="165.0" style="-fx-background-color: pink;" text="Все заявки">
+        <Button fx:id="orders" layoutX="250.0" layoutY="111.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="200.0" style="-fx-background-color: pink;" text="Все заявки">
             <font>
                 <Font name="Georgia" size="17.0" />
             </font>
         </Button>
-        <Button fx:id="ordersByStatus" layoutX="389.0" layoutY="168.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="165.0" style="-fx-background-color: pink;" text="Заявки на одобрение">
+        <Button fx:id="ordersByStatus" layoutX="250.0" layoutY="111.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="200.0" style="-fx-background-color: pink;" text="Заявки на одобрение">
             <font>
                 <Font name="Georgia" size="17.0" />
             </font>
         </Button>
-        <Button fx:id="orderByUser" layoutX="107.0" layoutY="168.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="165.0" style="-fx-background-color: pink;" text="Мои заявки" textFill="#090909">
+        <Button fx:id="orderByUser" layoutX="250.0" layoutY="111.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="200.0" style="-fx-background-color: pink;" text="Мои заявки" textFill="#090909">
+            <font>
+                <Font name="Georgia" size="17.0" />
+            </font>
+        </Button>
+        <Button fx:id="statistics" layoutX="250.0" layoutY="171.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="200.0" style="-fx-background-color: pink;" text="Статистика" textFill="#090909">
             <font>
                 <Font name="Georgia" size="17.0" />
             </font>
         </Button>
     </AnchorPane>
-    <Button fx:id="back" layoutX="563.0" layoutY="36.0" mnemonicParsing="false" text="Назад">
+    <Button fx:id="back" layoutX="536.0" layoutY="37.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="120.0" style="-fx-background-color: white;" text="Назад" textFill="PINK">
         <font>
             <Font name="Georgia" size="17.0" />
         </font>
     </Button>
-    <Text layoutX="242.0" layoutY="63.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Главное меню">
+    <Text layoutX="250.0" layoutY="63.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Главное меню">
         <font>
             <Font name="Georgia" size="30.0" />
         </font>

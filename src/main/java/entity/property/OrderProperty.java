@@ -17,6 +17,9 @@ public class OrderProperty {
     private StringProperty color;
     private IntegerProperty price;
     private StringProperty statusName;
+    private IntegerProperty sellerId;
+    private StringProperty sellerName;
+    private StringProperty sellerSurname;
 
     public OrderProperty(Order order) {
         this.userId = new SimpleIntegerProperty(order.getUserId().getUserId());
@@ -29,6 +32,9 @@ public class OrderProperty {
         this.color = new SimpleStringProperty(order.getCarId().getColor());
         this.price = new SimpleIntegerProperty(order.getCarId().getPrice());
         this.statusName = new SimpleStringProperty(order.getOrderStatus().getStatusName());
+        this.sellerId = new SimpleIntegerProperty(order.getSellerId().getUserId());
+        this.sellerName = new SimpleStringProperty(order.getSellerId().getFirstName());
+        this.sellerSurname = new SimpleStringProperty(order.getSellerId().getLastName());
     }
 
     public String getName() {
@@ -149,5 +155,41 @@ public class OrderProperty {
 
     public void setUserId(int userId) {
         this.userId.set(userId);
+    }
+
+    public int getSellerId() {
+        return sellerId.get();
+    }
+
+    public IntegerProperty sellerIdProperty() {
+        return sellerId;
+    }
+
+    public void setSellerId(int sellerId) {
+        this.sellerId.set(sellerId);
+    }
+
+    public String getSellerName() {
+        return sellerName.get();
+    }
+
+    public StringProperty sellerNameProperty() {
+        return sellerName;
+    }
+
+    public void setSellerName(String sellerName) {
+        this.sellerName.set(sellerName);
+    }
+
+    public String getSellerSurname() {
+        return sellerSurname.get();
+    }
+
+    public StringProperty sellerSurnameProperty() {
+        return sellerSurname;
+    }
+
+    public void setSellerSurname(String sellerSurname) {
+        this.sellerSurname.set(sellerSurname);
     }
 }

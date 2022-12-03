@@ -27,16 +27,19 @@ public class MainController {
     private Button ordersByStatus;
 
     @FXML
+    private Button statistics;
+
+    @FXML
     private Button back;
 
     private final SceneChanger sceneChanger = SceneChanger.getInstance();
 
     @FXML
     private void initialize() {
-       // getNews();
         if (!"admin".equals(Runner.getStatus().getRoleName())) {
             allUsers.setVisible(false);
             orders.setVisible(false);
+            statistics.setVisible(false);
         }
        if(!"seller".equals(Runner.getStatus().getRoleName())
        &&!"dealer".equals(Runner.getStatus().getRoleName())){
@@ -73,6 +76,11 @@ public class MainController {
         allUsers.setOnAction(event -> {
             allUsers.getScene().getWindow().hide();
             sceneChanger.changeScene("/fxml/users.fxml");
+        });
+
+        statistics.setOnAction(event -> {
+            statistics.getScene().getWindow().hide();
+            sceneChanger.changeScene("/fxml/statistics.fxml");
         });
 
         back.setOnAction(event -> {

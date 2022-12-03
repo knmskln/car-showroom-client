@@ -21,21 +21,6 @@
                     <TableColumn fx:id="statusColumn" prefWidth="112.66668701171875" text="Статус заявки" />
                 </columns>
             </TableView>
-         <Button fx:id="orderFromDealer" layoutX="323.0" layoutY="26.0" mnemonicParsing="false" text="Направить дилеру">
-            <font>
-               <Font name="Georgia" size="17.0" />
-            </font>
-         </Button>
-            <Button fx:id="approved" layoutX="323.0" layoutY="26.0" mnemonicParsing="false" text="Подтвердить">
-                <font>
-                    <Font name="Georgia" size="17.0" />
-                </font>
-            </Button>
-         <Button fx:id="rejected" layoutX="575.0" layoutY="26.0" mnemonicParsing="false" text="Отклонить">
-            <font>
-               <Font name="Georgia" size="17.0" />
-            </font>
-         </Button>
             <Button fx:id="saveToFile" layoutX="747.0" layoutY="29.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="155.0" style="-fx-background-color: pink;" text="Сохранить в файл">
                 <font>
                     <Font name="Georgia" size="14.0" />

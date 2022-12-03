@@ -2,10 +2,7 @@ package controller.order;
 //import com.sun.org.apache.xpath.internal.operations.Or;
 import cooperation.ClientRequest;
 import cooperation.ServerResponse;
-import entity.Car;
 import entity.property.OrderProperty;
-import entity.property.UserProperty;
-import javafx.beans.property.IntegerProperty;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
@@ -60,16 +57,9 @@ public class OrderListController {
     private TableColumn<OrderProperty, String> statusColumn;
 
     @FXML
-    private Button orderFromDealer;
-    @FXML
-    private Button rejected;
-    @FXML
     private Button back;
     @FXML
     private Button main;
-    @FXML
-    private Button approved;
-
     @FXML
     private Button saveToFile;
 
@@ -81,39 +71,11 @@ public class OrderListController {
 
     @FXML
     private void initialize() {
-        if (!"seller".equals(Runner.getStatus().getRoleName())) {
-            orderFromDealer.setVisible(false);
-        }
-        if (!"seller".equals(Runner.getStatus().getRoleName())&&
-             !"dealer".equals(Runner.getStatus().getRoleName())) {
-            rejected.setVisible(false);
-        }
-        if (!"dealer".equals(Runner.getStatus().getRoleName())) {
-            approved.setVisible(false);
-        }
-        if (!"admin".equals(Runner.getStatus().getRoleName())) {
-            saveToFile.setVisible(false);
-        }
         fillOrdersTable();
 
         back.setOnAction(event -> {
             back.getScene().getWindow().hide();
             SceneChanger.getInstance().changeScene("/fxml/main.fxml");
-        });
-
-        orderFromDealer.setOnAction(event -> {
-            changeOrderStatus(2);
-            fillOrdersTable();
-        });
-
-        rejected.setOnAction(event -> {
-            changeOrderStatus(4);
-            fillOrdersTable();
-        });
-
-        approved.setOnAction(event -> {
-            changeOrderStatus(3);
-            fillOrdersTable();
         });
 
         main.setOnAction(event -> {
@@ -171,25 +133,6 @@ public class OrderListController {
             orders = parser.orders(productData);
         }
     }
-    private void changeOrderStatus(int status) {
-        OrderProperty order = ordersTable.getSelectionModel().getSelectedItem();
-        int userId = order.getUserId();
-        int orderId = order.getOrderId();
-        Map<String, Object> data = new HashMap<>();
-        data.put("orderId", orderId);
-        data.put("statusId", status);
-        data.put("userId", userId);
-        Runner.sendData(new ClientRequest("changeOrderStatus", data));
-        ServerResponse response = Runner.getData();
-        if (!response.isError()) {
-            getOrders();
-            Alert alert = new Alert(INFORMATION, "Статус заявки изменен!");
-            alert.show();
-        } else {
-            Alert alert = new Alert(ERROR, "Произошла ошибка!");
-            alert.show();
-        }
-    }
     private void fillOrdersTable() {
         getOrders();
         List<OrderProperty> orderProperties = new ArrayList<>();
@@ -210,37 +153,6 @@ public class OrderListController {
             nameColumn.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getName()));
             surnameColumn.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getSurname()));
             statusColumn.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getStatusName()));
-            viewActionsForOrder(null);
-            ordersTable.getSelectionModel()
-                .selectedItemProperty()
-                .addListener((observable, oldValue, newValue) -> viewActionsForOrder(newValue));
-    }
-
-    private void viewActionsForOrder(OrderProperty order) {
-        if (order != null) {
-            if("seller".equals(Runner.getStatus().getRoleName())){
-                if ("orderFromSeller".equals(order.getStatusName())) {
-                    orderFromDealer.setVisible(true);
-                    rejected.setVisible(true);
-                } else {
-                    orderFromDealer.setVisible(false);
-                    rejected.setVisible(false);
-                }
-            }
-            if("dealer".equals(Runner.getStatus().getRoleName())){
-                if ("orderFromDealer".equals(order.getStatusName())) {
-                    approved.setVisible(true);
-                    rejected.setVisible(true);
-                } else {
-                    approved.setVisible(false);
-                    rejected.setVisible(false);
-                }
-            }
-        } else {
-            orderFromDealer.setVisible(false);
-            approved.setVisible(false);
-            rejected.setVisible(false);
-        }
     }
 }
 

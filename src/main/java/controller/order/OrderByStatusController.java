@@ -179,12 +179,18 @@ public class OrderByStatusController {
     }
     private void changeOrderStatus(int status) {
         OrderProperty order = ordersTable.getSelectionModel().getSelectedItem();
-        int userId = order.getUserId();
         int orderId = order.getOrderId();
+        int sellerId = order.getUserId();
+        if("seller".equals(Runner.getStatus().getRoleName())){
+            sellerId = Runner.getUserId();
+        }
+        else if("dealer".equals(Runner.getStatus().getRoleName())){
+            sellerId = order.getSellerId();
+        }
         Map<String, Object> data = new HashMap<>();
         data.put("orderId", orderId);
         data.put("statusId", status);
-        data.put("userId", userId);
+        data.put("userId", sellerId);
         Runner.sendData(new ClientRequest("changeOrderStatus", data));
         ServerResponse response = Runner.getData();
         if (!response.isError()) {

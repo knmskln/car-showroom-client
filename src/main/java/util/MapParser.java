@@ -38,7 +38,18 @@ public class MapParser {
                 (String) map.get("email"),
                 (boolean) map.get("banned"));
     }
+
     public User userId(Map<String, Object> map) {
+        return new User((int) map.get("userId"),
+                (String) map.get("login"),
+                (String) map.get("name"),
+                (String) map.get("surname"),
+                roleId((Map<String, Object>) map.get("userRole")),
+                (String) map.get("email"),
+                (boolean) map.get("banned"));
+    }
+
+    public User sellerId(Map<String, Object> map) {
         return new User((int) map.get("userId"),
                 (String) map.get("login"),
                 (String) map.get("name"),
@@ -87,7 +98,6 @@ public class MapParser {
                 (Integer) map.get("price")
         );
     }
-
     public List<Order> orders(List ordersData) {
         List<Order> orders = new ArrayList<>();
         for (Map<String, Object> order : (List<Map<String, Object>>) ordersData) {
@@ -100,6 +110,7 @@ public class MapParser {
         return new Order((int) map.get("orderId"),
                 userId((Map<String, Object>) map.get("userId")),
                 carId((Map<String, Object>) map.get("carId")),
-                orderStatus((Map<String, Object>) map.get("orderStatus")));
+                orderStatus((Map<String, Object>) map.get("orderStatus")),
+                sellerId((Map<String, Object>) map.get("sellerId")));
     }
 }
